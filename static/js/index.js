@@ -41,7 +41,6 @@ var Pagination = function (_React$Component) {
           pageSize = _props.pageSize,
           pager = _props.pager;
 
-      var pager = this.state.pager;
 
       if (page < 1 || page > pager.totalPages) {
         return;
@@ -252,7 +251,8 @@ var App = function (_React$Component2) {
             React.createElement(Pagination, {
               items: this.state.exampleItems,
               onChangePage: this.onChangePage,
-              getPager: this.getPager
+              getPager: this.getPager,
+              pager: this.state.pager
             }),
             this.state.pageOfItems.map(function (item) {
               return React.createElement(
@@ -266,7 +266,8 @@ var App = function (_React$Component2) {
             React.createElement(Pagination, {
               items: this.state.exampleItems,
               onChangePage: this.onChangePage,
-              getPager: this.getPager
+              getPager: this.getPager,
+              pager: this.state.pager
             })
           )
         )

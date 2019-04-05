@@ -19,7 +19,6 @@ class Pagination extends React.Component {
 
   setPage(page) {
     var { items, pageSize, pager } = this.props;
-    var pager = this.state.pager;
 
     if (page < 1 || page > pager.totalPages) {
       return;
@@ -159,6 +158,7 @@ class App extends React.Component {
               items={this.state.exampleItems}
               onChangePage={this.onChangePage}
               getPager={this.getPager}
+              pager={this.state.pager}
             />
             {this.state.pageOfItems.map(item => (
               <div key={item.id}>
@@ -169,6 +169,7 @@ class App extends React.Component {
               items={this.state.exampleItems}
               onChangePage={this.onChangePage}
               getPager={this.getPager}
+              pager={this.state.pager}
             />
           </div>
         </div>
