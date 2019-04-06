@@ -246,7 +246,7 @@ var App = function (_React$Component2) {
             React.createElement(
               "h1",
               null,
-              "React - Pagination Example with logic like Google"
+              "Integrating Partial React with Django"
             ),
             React.createElement(Pagination, {
               items: this.state.exampleItems,
@@ -254,15 +254,102 @@ var App = function (_React$Component2) {
               getPager: this.getPager,
               pager: this.state.pager
             }),
-            this.state.pageOfItems.map(function (item) {
-              return React.createElement(
-                "div",
-                { key: item.id },
-                item.name,
-                " ",
-                item.email
-              );
-            }),
+            React.createElement(
+              "div",
+              { className: "table-responsive" },
+              React.createElement(
+                "table",
+                { className: "table table-sm table-striped d-table sorted text-left" },
+                React.createElement(
+                  "thead",
+                  null,
+                  React.createElement(
+                    "tr",
+                    null,
+                    React.createElement(
+                      "th",
+                      null,
+                      "Device #"
+                    ),
+                    React.createElement(
+                      "th",
+                      null,
+                      "Bin"
+                    ),
+                    React.createElement(
+                      "th",
+                      null,
+                      "Product"
+                    ),
+                    React.createElement(
+                      "th",
+                      null,
+                      "Condition"
+                    ),
+                    React.createElement(
+                      "th",
+                      null,
+                      "Accepted"
+                    ),
+                    React.createElement(
+                      "th",
+                      null,
+                      "Hold Expiry"
+                    ),
+                    React.createElement(
+                      "th",
+                      null,
+                      "Channel"
+                    )
+                  )
+                ),
+                React.createElement(
+                  "tbody",
+                  null,
+                  this.state.pageOfItems.map(function (item) {
+                    return React.createElement(
+                      "tr",
+                      { key: item.id },
+                      React.createElement(
+                        "td",
+                        null,
+                        "Link"
+                      ),
+                      React.createElement(
+                        "td",
+                        null,
+                        item.id
+                      ),
+                      React.createElement(
+                        "td",
+                        null,
+                        item.name
+                      ),
+                      React.createElement(
+                        "td",
+                        null,
+                        item.email
+                      ),
+                      React.createElement(
+                        "td",
+                        null,
+                        "lorem"
+                      ),
+                      React.createElement(
+                        "td",
+                        null,
+                        "lorem"
+                      ),
+                      React.createElement(
+                        "td",
+                        null,
+                        "lorem"
+                      )
+                    );
+                  })
+                )
+              )
+            ),
             React.createElement(Pagination, {
               items: this.state.exampleItems,
               onChangePage: this.onChangePage,

@@ -153,18 +153,42 @@ class App extends React.Component {
       <div>
         <div className="container">
           <div className="text-center">
-            <h1>React - Pagination Example with logic like Google</h1>
+            <h1>Integrating Partial React with Django</h1>
             <Pagination
               items={this.state.exampleItems}
               onChangePage={this.onChangePage}
               getPager={this.getPager}
               pager={this.state.pager}
             />
-            {this.state.pageOfItems.map(item => (
-              <div key={item.id}>
-                {item.name} {item.email}
-              </div>
-            ))}
+            <div className="table-responsive">
+              <table className="table table-sm table-striped d-table sorted text-left">
+                <thead>
+                  <tr>
+                    <th>Device #</th>
+                    <th>Bin</th>
+                    <th>Product</th>
+                    <th>Condition</th>
+                    <th>Accepted</th>
+                    <th>Hold Expiry</th>
+                    <th>Channel</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.pageOfItems.map(item => (
+                    <tr key={item.id}>
+                      <td>Link</td>
+                      <td>{item.id}</td>
+                      <td>{item.name}</td>
+                      <td>{item.email}</td>
+                      <td>lorem</td>
+                      <td>lorem</td>
+                      <td>lorem</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
             <Pagination
               items={this.state.exampleItems}
               onChangePage={this.onChangePage}
